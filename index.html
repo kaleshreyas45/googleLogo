@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .google{
+            position: relative;
+            border-width: 90px;
+            border-style: solid;
+            border-top-color: #FF2412;
+            border-left-color: #FFD700;
+            border-bottom-color: #34A853;
+            border-right-color: #4285f4;
+            width:329px;
+            height:329px;
+            border-radius: 0%;
+            animation-name: grow;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+        @keyframes grow{
+            0%{
+                border-radius: 0;
+            }
+            20%{
+                border-radius: 10%;
+            }
+            40%{
+                border-radius: 20%;
+            }
+            60%{
+                border-radius: 30%;
+            }
+            80%{
+                border-radius: 40%;
+            }
+            100%{
+                border-radius: 50%;
+            }
+        }
+        .google::before{
+            content: "";
+            position: absolute;
+            right:-105px;
+            top:13px;
+            background-color: white;
+            width:200px;
+            height:150px;
+            transform: rotate(-45deg);
+            visibility: hidden;
+            animation-name: visiblity-before;
+            animation-delay: 4s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            transition: all 0.5s; 
+        }
+          @keyframes visiblity-before{
+            0%{
+                visibility: hidden;
+               
+            }
+            100%{
+                visibility: visible;
+            }
+        }
+      
+        .google::after{
+            content: "";
+            position: absolute;
+            right:-84px;
+            top:114px;
+            background-color: #4285f4;
+            width:200px;
+            height:90px;
+            visibility: hidden;
+            transform: rotate(90deg);
+            animation-name: visiblity-after;
+            animation-delay: 4s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            transition: all 0.5s;
+
+        }   
+         @keyframes visiblity-after{
+            0%{
+                visibility: hidden;
+                transform: rotate(90deg);
+            }
+            100%{
+                visibility: visible;
+                transform: rotate(0deg);
+            }
+        }
+        @media(max-width:508px){
+            .google{
+                width:191px;
+                height:193px;
+                border-width:50px;
+            }
+            .google::before{
+                height:97px;
+                transform: rotate(-45deg);
+                top: -12px;
+            }
+            .google::after{
+                height:50px;
+                width:114px;
+                top:65px;
+                right:-45px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="google"></div>
+    </div>
+   
+</body>
+</html>
